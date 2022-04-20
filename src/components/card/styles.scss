@@ -1,0 +1,71 @@
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #959da4;
+    border-radius: 4px;
+    color: #4b4e51;
+    margin-bottom: 8px;
+    display: block;
+    padding: 8px;
+    margin-left: -1em;
+    margin-right: -1em;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid green;
+    }
+
+    &--borderless {
+        border: none;
+        margin: 0;
+        padding: 4px;
+        max-width: 240px;
+    }
+
+    &__image-container,
+    &__container {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    &__image-container {
+        width: 20%;
+        vertical-align: top;
+
+        img {
+            margin: 0;
+        }
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__container {
+        width: 80%;
+    }
+
+    &__review {
+        display: inline;
+        margin-left: 4px;
+
+        &--open {
+            color: green;
+        }
+
+        &--closed {
+            color: red
+        }
+    }
+
+    &__content {
+        padding: 2px 0;
+    }
+
+    &__title {
+        font-size: 14px;
+        padding: 4px 0;
+    }
+}
