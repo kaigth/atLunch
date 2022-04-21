@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../../store';
 
 import Button from '../button';
 import DropDown from '../dropdown';
@@ -17,10 +19,9 @@ import './styles.scss';
  */
 export const Nav = () => {
     const [ isOpen, setIsOpen ] = useState(false);
-    const toggle = () => {
-        if (isOpen) return;
-        setIsOpen(!isOpen);
-    }
+    const [ sortedBy, setSortedBy ] = useState({});
+    const { sortBy, places } = useStore('places');
+    const toggle = () => setIsOpen(!isOpen);
 
     return (
         <nav className="navigation">
@@ -29,19 +30,36 @@ export const Nav = () => {
                 <h1 className='navigation__text'>AT LUNCH</h1>
             </div>
             <div className="navigation__content">
-                <Button onClick={() => toggle()}>
-                    filter
-                    <DropDown isOpen={isOpen}>
-                        <form>
-                            <Select type="radio" name="rating" value="ratingHigh">Ratings High to Low</Select>
-                            <Select type="radio" name="rating" value="ratingLow">Ratings Low to High</Select>
-                        </form>
-                    </DropDown>
-                </Button>
+                <Button disabled={places.length <= 0} onClick={() => toggle()}>filter</Button>
+                <DropDown isOpen={isOpen} onClick={() => {
+                    sortBy(sortedBy.direction, sortedBy.by);
+                    toggle();
+                }}>
+                    <form>
+                        <Select
+                            type="radio"
+                            onChange={() => setSortedBy({ direction: 'asc', by: 'rating' })}
+                            name="rating"
+                            disabled={places.length <= 0}
+                            value="ratingHigh"
+                        >
+                            Ratings High to Low
+                        </Select>
+                        <Select
+                            type="radio"
+                            onChange={() => setSortedBy({ direction: 'desc', by: 'rating' })}
+                            name="rating"
+                            disabled={places.length <= 0}
+                            value="ratingLow"
+                        >
+                            Ratings Low to High
+                        </Select>
+                    </form>
+                </DropDown>
                 <Search />
             </div>
         </nav>
     );
 };
 
-export default Nav;
+export default observer(Nav);

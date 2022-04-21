@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../button';
-
 import './styles.scss';
 
 /**
@@ -11,42 +9,38 @@ import './styles.scss';
  * @function
  * @memberof components
  * @param {object} props The component props
+ * @param {object|string} props.children The children of the DropDown
  * @param {Boolean} props.isOpen Handle the open state of the Dropdown
  * @param {Function} props.onClick Handle the click of the DropDown
- * @param {object|string} props.children The children of the DropDown
  * @returns {React.Component} Returns the react component
  */
-export const DropDown = ({ isOpen, onClick, children }) => {
+export const DropDown = ({ children, isOpen, onClick }) => {
     return (
-      <>
-          {isOpen && (
-            <div className="dropdown">
-              <div className="dropdown__content">
+        <div className={`dropdown ${isOpen ? 'dropdown--open' : ''}`}>
+            <div className="dropdown__content">
                 {children}
-              </div>
-              <div className="dropdown__footer">
-                <Button borderless onClick={onClick}>Save</Button>
-              </div>
             </div>
-          )}
-      </>
+            <div className="dropdown__footer">
+                <button className="dropdown__button" onClick={onClick}>Save</button>
+            </div>
+        </div>
     );
 };
 
 DropDown.propTypes = {
-    isOpen: PropTypes.bool,
-    onClick: PropTypes.func,
     children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.string,
         PropTypes.element,
     ]),
+    isOpen: PropTypes.bool,
+    onClick: PropTypes.func,
 };
 
 DropDown.defaultProps = {
+    children: null,
     isOpen: false,
     onClick: () => {},
-    children: null,
 };
 
 export default DropDown;

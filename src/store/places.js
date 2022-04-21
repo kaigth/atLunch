@@ -15,7 +15,13 @@ export default class places {
         setActivePlace: action,
         setFavorite: action,
         setPlaces: action,
+        sortBy: action,
     });
+
+    this.setPlaces = this.setPlaces.bind(this);
+    this.setActivePlace = this.setActivePlace.bind(this);
+    this.setFavorite = this.setFavorite.bind(this);
+    this.sortBy = this.sortBy.bind(this);
   }
 
   get places() {
@@ -33,22 +39,30 @@ export default class places {
     })
   }
 
-  setPlaces = (places) => {
+  setPlaces(places) {
+    const filteredPlaces = places.filter(item => item.business_status === 'OPERATIONAL');
     const favorites = JSON.parse(window.localStorage.getItem('favorites'));
-    const newItems = this.parseFavorites(places, favorites);
+    const newItems = this.parseFavorites(filteredPlaces, favorites);
     this.items = newItems;
+  }
+
+  sortBy(order='asc', type) {
+    if (this.items.length <= 0) return;
+    if (order === 'asc') return this.items.sort((a, b) => b[type] - a[type]);
+
+    return this.items.sort((a, b) => a[type] - b[type]);
   }
 
   get activePlace() {
     return this.activePlace;
   }
 
-  setActivePlace = (reference) => {
+  setActivePlace(reference) {
     const item = this.items.find(place => place.reference === reference);
     this.activePlace = item;
   }
 
-  setFavorite = (item) => {
+  setFavorite(item) {
     const favs = JSON.parse(window.localStorage.getItem('favorites')) || [];
     const matchItem = favs.find(fav => fav === item);
     let tempArr = [];

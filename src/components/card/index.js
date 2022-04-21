@@ -25,41 +25,43 @@ const renderCost = (cost) => {
  * @function
  * @memberof components
  * @param {object} props The component props
+ * @param {string} props.address The business address
  * @param {string} props.borderless Card displayed as a borderless infoWindow
- * @param {string} props.title The title of the card
+ * @param {string} props.companyType The type of company selected
+ * @param {number} props.cost The cost rating
+ * @param {string} props.icon The business icon
+ * @param {Boolean} props.favorite Displays if the card is favorited
+ * @param {Function} props.onClick Function to handle clicking the card.
+ * @param {string} props.open Boolean to handle if the business is open
+ * @param {string} props.reference The reference ID for the business. Used for sorting and reduction
  * @param {number} props.review The user review of the card
  * @param {number} props.reviewTotal The amount of reviews in total of the card
- * @param {number} props.cost The cost rating
- * @param {string} props.companyType The type of company selected
- * @param {string} props.open Boolean to handle if the business is open
- * @param {string} props.address The business address
- * @param {Function} props.onClick Function to handle clicking the card.
- * @param {Boolean} props.favorite Displays if the card is favorited
  * @param {Function} props.setFavorite Triggers the addition and removal of a favorite card
+ * @param {string} props.title The title of the card
  * @returns {React.Component} Returns the react component
  */
 export const Card = ({
+    address,
     borderless,
-    reference,
-    title,
+    companyType,
+    cost,
     icon,
+    favorite,
+    onClick,
+    open,
+    reference,
     review,
     reviewTotal,
-    cost,
-    companyType,
-    open,
-    address,
-    onClick,
-    favorite,
     setFavorite,
+    title,
 }) => {
     return (
         <li className={`card ${borderless ? 'card--borderless' : ''}`} onClick={() => onClick(reference)}>
             <div 
                 className={`card__heart ${favorite ? 'card__heart--favorite' : ''}`}
                 onClick={evt => {
-                    evt.stopPropagation()
-                    setFavorite(reference)
+                    evt.stopPropagation();
+                    setFavorite(reference);
                 }}
             />
             <div className="card__image-container">
@@ -87,7 +89,7 @@ Card.propTypes = {
     cost: PropTypes.number,
     favorite: PropTypes.bool,
     icon: PropTypes.string,
-    open: PropTypes.func,
+    open: PropTypes.bool,
     reference: PropTypes.string,
     review: PropTypes.number,
     reviewTotal: PropTypes.number,
@@ -102,7 +104,7 @@ Card.defaultProps = {
     cost: 0,
     favorite: false,
     icon: './trail.jpg',
-    open: () => {},
+    open: false,
     reference: '',
     review: 0,
     reviewTotal: 0,

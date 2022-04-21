@@ -12,17 +12,20 @@ export default class sidebar {
             open: observable,
             toggleOpen: action,
         });
+
+        this.toggleOpen = this.toggleOpen.bind(this);
+        this.openSidebar = this.openSidebar.bind(this);
     }
 
     get open() {
         return this.open;
     }
 
-    toggleOpen = () => {
+    toggleOpen() {
         this.open = !this.open;
     }
 
-    openSidebar = () => {
+    openSidebar() {
         this.open = true;
     }
 };

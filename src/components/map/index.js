@@ -25,6 +25,26 @@ export const Map = ({ children }) => {
     const { map, setMap } = useStore('map');
     const { open } = useStore('sidebar');
 
+    const handleNavigatorLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+        
+                    map.setCenter(pos);
+                },
+            () => {
+                throw new Error('Geolocation refused.');
+            }
+            );
+        } else {
+            throw new Error('Geolocation not supported.');
+        }
+    }
+
     useEffect(() => {
         if (ref.current && !map) {
             const { CENTER, ZOOM } = constants;
@@ -34,6 +54,10 @@ export const Map = ({ children }) => {
             }));
         }
     });
+
+    useEffect(() => {
+        if (map) handleNavigatorLocation();
+    }, [map]);
 
     return (
         <>

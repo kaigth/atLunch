@@ -30,12 +30,13 @@ export const SideBar = () => {
                             title={place.name}
                             reviewTotal={place.user_ratings_total}
                             review={place.rating}
-                            open={() => place.opening_hours?.isOpen()}
+                            open={place.opening_hours?.open_now}
                             cost={place.price_level}
                             address={place.formatted_address}
                             companyType={place.types[0]}
                             favorite={place.favorite}
                             setFavorite={ref => setFavorite(ref)}
+                            place={place}
                         />
                     )) : <div className="sidebar__empty">No Soup For You!</div> }
                 </ul>

@@ -7,10 +7,15 @@
     padding: 8px;
     position: relative;
 
-    &--borderless {
-        border: none;
-        color: green;
-        font-weight: bold;
-        padding: 4px;
+    &:hover {
+        background-color: green;
+        border: 1px solid green;
+        color: #FFFFFF;
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        border: 1px solid #959da4;
+        color: gray;
     }
 }

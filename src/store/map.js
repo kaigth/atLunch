@@ -15,13 +15,16 @@ export default class map {
         activeMarker: observable,
         setActiveMarker: action,
     });
+
+    this.setMap = this.setMap.bind(this);
+    this.setActiveMarker = this.setActiveMarker.bind(this);
   }
 
   get map() {
     return this.map;
   }
 
-  setMap = (googleMap) => {
+  setMap(googleMap) {
     this.map = googleMap;
   }
 
@@ -29,7 +32,7 @@ export default class map {
     return this.activeMarker;
   }
 
-  setActiveMarker = (marker) => {
+  setActiveMarker(marker) {
     this.activeMarker = marker;
   }
 };

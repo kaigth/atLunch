@@ -45,7 +45,7 @@ export const Home = () => {
                             title={activePlace?.name}
                             reviewTotal={activePlace?.user_ratings_total}
                             review={activePlace?.rating}
-                            open={() => activePlace?.opening_hours?.isOpen()}
+                            open={activePlace?.opening_hours?.open_now}
                             cost={activePlace?.price_level}
                             address={activePlace?.formatted_address}
                             companyType={activePlace?.types[0]}
