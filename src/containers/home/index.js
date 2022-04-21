@@ -20,8 +20,13 @@ import './styles.scss';
  * @returns {string} The rendered component
  */
 export const Home = () => {
-    const { places } = useStore('places');
-    const { activePlace } = useStore('sidebar');
+    const {
+        places,
+        activePlace,
+        favorite,
+        setFavorite,
+    } = useStore('places');
+    const { map, activeMarker  } = useStore('map');
 
     return (
         <section className="home">
@@ -30,23 +35,28 @@ export const Home = () => {
                 <SideBar />
                 <Map>
                     { places && places.map(place => (
-                        <Marker key={place.reference} position={place.geometry.location}>
-                            <InfoWindow visible={place.reference === activePlace}>
-                                <Card
-                                    key={place.reference}
-                                    borderless={true}
-                                    title={place.name}
-                                    reviewTotal={place.user_ratings_total}
-                                    review={place.rating}
-                                    open={() => place.opening_hours?.isOpen()}
-                                    cost={place.price_level}
-                                    address={place.formatted_address}
-                                    companyType={place.types[0]}
-                                />
-                            </InfoWindow>
-                        </Marker>
+                        <Marker
+                            key={place.reference}
+                            reference={place.reference}
+                            position={place.geometry.location}
+                        />
                     ))}
                 </Map>
+                { activePlace &&
+                    <InfoWindow map={map} activeMarker={activeMarker}>
+                        <Card
+                            key={activePlace?.reference}
+                            borderless={true}
+                            title={activePlace?.name}
+                            reviewTotal={activePlace?.user_ratings_total}
+                            review={activePlace?.rating}
+                            open={() => activePlace?.opening_hours?.isOpen()}
+                            cost={activePlace?.price_level}
+                            address={activePlace?.formatted_address}
+                            companyType={activePlace?.types[0]}
+                        />
+                    </InfoWindow>
+                }
             </main>
         </section>
     )

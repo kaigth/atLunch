@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOMServer from 'react-dom/server'
+import ReactDOMServer from 'react-dom/server';
+import { observer } from 'mobx-react-lite';
 
 /**
  * render a standard marker component
@@ -10,7 +11,7 @@ import ReactDOMServer from 'react-dom/server'
  */
 export const InfoWindow = (options) => {
     const [ infoWindow, setInfoWindow ] = useState();
-    const { map, marker, visible, children } = options;
+    const { children, map, activeMarker } = options;
 
     const updateContent = () => {
         const content = renderChildren();
@@ -19,6 +20,11 @@ export const InfoWindow = (options) => {
 
     const renderChildren = () => {
         return ReactDOMServer.renderToString(children);
+    }
+
+    const handleOpen = () => {
+        infoWindow.open(map, activeMarker);
+        map.panTo(activeMarker.getPosition());
     }
 
     useEffect(() => {
@@ -35,19 +41,9 @@ export const InfoWindow = (options) => {
 
         if (infoWindow) {
             infoWindow.setOptions(options);
-
-            marker.addListener('click', () => {
-                infoWindow.open(map, marker);
-            });
+            handleOpen();
         }
     }, [infoWindow, options]);
-
-    useEffect(() => {
-        if (infoWindow && visible) {
-            infoWindow.open(map, marker);
-            infoWindow.focus();
-        }
-    }, [infoWindow, visible]);
 
   return null;
 };

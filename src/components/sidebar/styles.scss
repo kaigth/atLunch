@@ -3,13 +3,17 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 320px;
+    max-width: 320px;
     height: 100%;
     background-color: #a7acb0;
     transform: translateX(-400px);
     transition: transform 0.2s cubic-bezier(0,0.5,1,1);
     z-index: 10;
     overflow: hidden;
+
+    & ::-webkit-scrollbar {
+        width: 0px;
+    }
 
     &--open {
         transform: translateX(0);

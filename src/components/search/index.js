@@ -14,15 +14,15 @@ import Input from '../input';
 export const Search = () => {
     const [search, setSearch] = useState(null);
     const [ref, setRef] = useState(null);
-    const { setPlaces } = useStore('places');
+    const { setPlaces, setActivePlace } = useStore('places');
     const { map } = useStore('map');
-    const { toggleOpen } = useStore('sidebar');
+    const { openSidebar } = useStore('sidebar');
     const googleEvents = window.google.maps.event;
 
     const handleBounds = () => {
-        map.addListener("bounds_changed", () => {
+        map.addListener('bounds_changed', () => {
             search.setBounds(map.getBounds());
-            googleEvents.clearListeners(map, "bounds_changed");
+            googleEvents.clearListeners(map, 'bounds_changed');
         });
     };
 
@@ -42,16 +42,16 @@ export const Search = () => {
     }
 
     const handleSearchCall = () => {
-        search.addListener("places_changed", () => {
+        search.addListener('places_changed', () => {
             const searchPlaces = search.getPlaces();
             if (searchPlaces.length === 0) return;
 
             const bounds = parseBounds(searchPlaces);
+            setActivePlace(null);
             setPlaces(searchPlaces);
-            toggleOpen();
+            openSidebar();
 
             map.fitBounds(bounds);
-            googleEvents.clearListeners(search, "places_changed");
         });
     }
 

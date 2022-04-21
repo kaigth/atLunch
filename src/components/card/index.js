@@ -39,9 +39,18 @@ export const Card = ({
     open,
     address,
     onClick,
+    favorite,
+    setFavorite,
 }) => {
     return (
         <li className={`card ${borderless ? 'card--borderless' : ''}`} onClick={() => onClick(reference)}>
+            <div 
+                className={`card__heart ${favorite ? 'card__heart--favorite' : ''}`}
+                onClick={evt => {
+                    evt.stopPropagation()
+                    setFavorite(reference)
+                }}
+            />
             <div className="card__image-container">
                 <img className="card__image" src={icon} alt={title} />
             </div>
@@ -70,6 +79,8 @@ Card.propTypes = {
     cost: PropTypes.number,
     companyType: PropTypes.string,
     open: PropTypes.func,
+    setFavorite: PropTypes.func,
+    favorite: PropTypes.bool,
     address: PropTypes.string,
 };
 
@@ -83,6 +94,8 @@ Card.defaultProps = {
     cost: 0,
     companyType: '',
     open: () => {},
+    setFavorite: () => {},
+    favorite: false,
     address: '',
 };
 

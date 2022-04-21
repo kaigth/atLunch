@@ -6,14 +6,11 @@ import {
    
 export default class sidebar {
     open = false;
-    activePlace = '';
 
     constructor() {
         makeAutoObservable(this, {
             open: observable,
             toggleOpen: action,
-            activePlace: observable,
-            setActivePlace: action,
         })
     }
 
@@ -25,12 +22,8 @@ export default class sidebar {
         this.open = !this.open;
     }
 
-    get activePlace() {
-        return this.activePlace;
-    }
-
-    setActivePlace = (reference) => {
-        this.activePlace = reference;
+    openSidebar = () => {
+        this.open = true;
     }
 };
    

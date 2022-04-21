@@ -15,8 +15,9 @@ import './styles.scss';
  * @returns {React.Component} Returns the react component
  */
 export const SideBar = () => {
-    const { places } = useStore('places');
-    const { open, setActivePlace } = useStore('sidebar');
+    const { places, setActivePlace, setFavorite } = useStore('places');
+    const { open } = useStore('sidebar');
+
     return (
         <section className={`sidebar ${open ? 'sidebar--open' : ''}`}>
             <div className="sidebar__container">
@@ -33,8 +34,10 @@ export const SideBar = () => {
                             cost={place.price_level}
                             address={place.formatted_address}
                             companyType={place.types[0]}
+                            favorite={place.favorite}
+                            setFavorite={ref => setFavorite(ref)}
                         />
-                    )) : <div>No Items</div> }
+                    )) : <div>No Soup For You!</div> }
                 </ul>
             </div>
         </section>

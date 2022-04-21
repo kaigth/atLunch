@@ -20,6 +20,7 @@ import './styles.scss';
 export const Map = ({ children }) => {
     const ref = React.useRef(null);
     const { map, setMap } = useStore('map');
+    const { open } = useStore('sidebar');
 
     useEffect(() => {
         if (ref.current && !map) {
@@ -33,7 +34,7 @@ export const Map = ({ children }) => {
 
     return (
         <>
-            <div ref={ref} className="map" />
+            <div ref={ref} className={`map ${open ? 'map--open' : ''}`} />
             { children && children.map(child => {
                 if (isValidElement) return cloneElement(child, { map }); 
             })}

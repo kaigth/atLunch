@@ -1,4 +1,10 @@
-import React, { useState, useEffect, cloneElement } from 'react';
+import React, {
+    useState,
+    useEffect,
+} from 'react';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../../store';
+
 
 /**
  * render a standard marker component
@@ -9,15 +15,24 @@ import React, { useState, useEffect, cloneElement } from 'react';
  */
 export const Marker = (options) => {
     const [ marker, setMarker ] = useState();
-    const { map, children } = options;
+    const { setActiveMarker } = useStore('map');
+    const { activePlace, setActivePlace } = useStore('places');
+    const { reference } = options;
+    const gMaps = window.google.maps;
+
+    const handleActiveEvent = () => {
+        setActiveMarker(marker);
+        setActivePlace(reference);
+    }
 
     useEffect(() => {
         if (!marker) {
-            setMarker(new window.google.maps.Marker());
+            setMarker(new gMaps.Marker());
         }
 
         return () => {
             if (marker) {
+                gMaps.event.clearListeners('click', marker);
                 marker.setMap(null);
             }
         };
@@ -26,16 +41,16 @@ export const Marker = (options) => {
     useEffect(() => {
         if (marker) {
             marker.setOptions(options);
-        }
-    }, [marker, options]);
 
-  return (
-      <>
-        { children.length ? children.map(child => {
-            if (isValidElement) return cloneElement(child, { map, marker }); 
-        }) : cloneElement(children, { map, marker })}
-      </>
-  );
+            if (activePlace && (reference === activePlace.reference)) {
+                setActiveMarker(marker);
+            }
+            
+            marker.addListener('click', handleActiveEvent);
+        }
+    }, [marker, options, setActiveMarker, activePlace]);
+
+  return null;
 };
 
-export default Marker;
+export default observer(Marker);
