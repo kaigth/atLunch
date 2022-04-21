@@ -3,6 +3,7 @@ import React, {
     isValidElement,
     cloneElement,
 } from 'react';
+import PropTypes from 'prop-types';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../store';
 
@@ -15,6 +16,8 @@ import './styles.scss';
  * 
  * @function
  * @memberof components
+ * @param {object} props The component props
+ * @param {object|string} props.children The react children of Map
  * @returns {React.Component} Returns the react component
  */
 export const Map = ({ children }) => {
@@ -40,6 +43,19 @@ export const Map = ({ children }) => {
             })}
         </>
     )
+};
+
+Map.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.element,
+        PropTypes.string,
+    ]),
+    onClick: PropTypes.func,
+};
+
+Map.defaultProps = {
+    children: null,
 };
 
 export default observer(Map);

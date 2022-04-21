@@ -11,17 +11,19 @@ import './styles.scss';
  * @param {object} props The component props
  * @param {object|string} props.children The react children of button
  * @param {Function} props.onClick the onClick event
+ * @param {Boolean} props.borderless Display a borderless button
  * @returns {React.Component} Returns the react component
  */
-export const Button = ({ onClick, children }) => {
+export const Button = ({ onClick, children, borderless }) => {
     return (
-        <button className="button" onClick={onClick}>
+        <button className={`button ${borderless ? 'button--borderless' : ''}`} onClick={onClick}>
             {children}
         </button>
     );
 };
 
 Button.propTypes = {
+    borderless: PropTypes.bool,
     children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.element,
@@ -31,6 +33,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+    borderless: false,
     children: null,
     onClick: () => {},
 };

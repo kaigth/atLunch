@@ -39,7 +39,7 @@ export const Search = () => {
         });
 
         return bounds;
-    }
+    };
 
     const handleSearchCall = () => {
         search.addListener('places_changed', () => {
@@ -53,7 +53,7 @@ export const Search = () => {
 
             map.fitBounds(bounds);
         });
-    }
+    };
 
     useEffect(() => {
         if (ref && !search) {

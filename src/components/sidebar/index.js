@@ -37,7 +37,7 @@ export const SideBar = () => {
                             favorite={place.favorite}
                             setFavorite={ref => setFavorite(ref)}
                         />
-                    )) : <div>No Soup For You!</div> }
+                    )) : <div className="sidebar__empty">No Soup For You!</div> }
                 </ul>
             </div>
         </section>

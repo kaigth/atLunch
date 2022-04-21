@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { observer } from 'mobx-react-lite';
 
 /**
- * render a standard marker component
+ * render a standard InfoWindow component
  * 
  * @function
  * @memberof components
- * @param {object} options The marker options
+ * @param {object} options The InfoWindow options
  */
 export const InfoWindow = (options) => {
     const [ infoWindow, setInfoWindow ] = useState();
@@ -31,9 +30,15 @@ export const InfoWindow = (options) => {
         if (!infoWindow) {
             setInfoWindow(new google.maps.InfoWindow({
                 content: '',
-                ...options
+                ...options,
             }));
         }
+
+        return () => {
+            if (infoWindow) {
+                setInfoWindow(null);
+            }
+        };
     }, [infoWindow]);
 
     useEffect(() => {

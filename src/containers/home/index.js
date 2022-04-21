@@ -20,12 +20,7 @@ import './styles.scss';
  * @returns {string} The rendered component
  */
 export const Home = () => {
-    const {
-        places,
-        activePlace,
-        favorite,
-        setFavorite,
-    } = useStore('places');
+    const { places, activePlace } = useStore('places');
     const { map, activeMarker  } = useStore('map');
 
     return (

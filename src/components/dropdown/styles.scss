@@ -1,94 +1,22 @@
-.card {
+.dropdown {
     background-color: #FFFFFF;
-    border: 1px solid #959da4;
+    border: 1px solid gray;
     border-radius: 4px;
-    color: #4b4e51;
-    margin-bottom: 8px;
-    display: block;
+    min-width: 200px;
     padding: 8px;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-        border: 1px solid green;
-    }
-
-    &--borderless {
-        border: none;
-        margin: 0;
-        padding: 4px;
-        cursor: auto;
-
-        .card__heart {
-            display: none;
-        }
-
-        &:hover {
-            border: none;
-        }
-    }
-
-    &__image-container,
-    &__container {
-        display: inline-block;
-        position: relative;
-        text-align: left;
-        font-size: 14px;
-    }
-
-    &__heart {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 8px;
-        height: 8px;
-        padding: 4px;
-        margin: 4px 4px 0;
-        border: 1px solid grey;
-        border-radius: 100%;
-        z-index: 20;
-
-        &--favorite {
-            background-color: green;
-        }
-    }
-
-    &__image-container {
-        width: 70px;
-        vertical-align: top;
-
-        img {
-            margin: 0;
-        }
-    }
-
-    &__image {
-        width: 60px;
-    }
-
-    &__container {
-        width: 220px;
-    }
-
-    &__review {
-        display: inline;
-        margin-left: 4px;
-
-        &--open {
-            color: green;
-        }
-
-        &--closed {
-            color: red
-        }
-    }
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 100;
 
     &__content {
-        padding: 2px 0;
+        padding-bottom: 8px;
+        text-align: left;
     }
 
-    &__title {
-        font-size: 14px;
-        padding: 4px 0;
+    &__footer {
+        display: inline-block;
+        text-align: right;
+        width: 100%;
     }
 }

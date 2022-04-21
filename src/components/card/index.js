@@ -4,6 +4,14 @@ import StarsRating from 'stars-rating';
 
 import './styles.scss';
 
+/**
+ * Render cost symbol based on google price rating
+ * 
+ * @function
+ * @memberof components
+ * @param {object} cost The google cost rating
+ * @returns {string} The symbol based on the google cost rating
+ */
 const renderCost = (cost) => {
     if (cost === 2) return '$$';
     if (cost === 3) return '$$$';
@@ -25,6 +33,9 @@ const renderCost = (cost) => {
  * @param {string} props.companyType The type of company selected
  * @param {string} props.open Boolean to handle if the business is open
  * @param {string} props.address The business address
+ * @param {Function} props.onClick Function to handle clicking the card.
+ * @param {Boolean} props.favorite Displays if the card is favorited
+ * @param {Function} props.setFavorite Triggers the addition and removal of a favorite card
  * @returns {React.Component} Returns the react component
  */
 export const Card = ({
@@ -55,7 +66,7 @@ export const Card = ({
                 <img className="card__image" src={icon} alt={title} />
             </div>
             <div className="card__container">
-                <p className="card__title">{title}</p>
+                <h2 className="card__title">{title}</h2>
                 <StarsRating className="card__review" edit={false} count={5} value={review} size={15} color2={'#ffd700'} />
                 <span>{`(${reviewTotal})`}</span>
                 <span className="card__review">{renderCost(cost)}</span>
@@ -70,33 +81,33 @@ export const Card = ({
 };
 
 Card.propTypes = {
+    address: PropTypes.string,
     borderless: PropTypes.bool,
-    reference: PropTypes.string,
-    title: PropTypes.string,
+    companyType: PropTypes.string,
+    cost: PropTypes.number,
+    favorite: PropTypes.bool,
     icon: PropTypes.string,
+    open: PropTypes.func,
+    reference: PropTypes.string,
     review: PropTypes.number,
     reviewTotal: PropTypes.number,
-    cost: PropTypes.number,
-    companyType: PropTypes.string,
-    open: PropTypes.func,
     setFavorite: PropTypes.func,
-    favorite: PropTypes.bool,
-    address: PropTypes.string,
+    title: PropTypes.string,
 };
 
 Card.defaultProps = {
+    address: '',
     borderless: false,
-    reference: '',
-    title: 'Missing Title',
+    companyType: '',
+    cost: 0,
+    favorite: false,
     icon: './trail.jpg',
+    open: () => {},
+    reference: '',
     review: 0,
     reviewTotal: 0,
-    cost: 0,
-    companyType: '',
-    open: () => {},
     setFavorite: () => {},
-    favorite: false,
-    address: '',
+    title: 'Missing Title',
 };
 
 export default Card;

@@ -48,7 +48,7 @@ export const Marker = (options) => {
             
             marker.addListener('click', handleActiveEvent);
         }
-    }, [marker, options, setActiveMarker, activePlace]);
+    }, [marker, options, activePlace]);
 
   return null;
 };

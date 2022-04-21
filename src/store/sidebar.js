@@ -11,7 +11,7 @@ export default class sidebar {
         makeAutoObservable(this, {
             open: observable,
             toggleOpen: action,
-        })
+        });
     }
 
     get open() {

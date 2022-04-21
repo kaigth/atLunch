@@ -2,35 +2,34 @@ import {
     action,
     makeAutoObservable,
     observable,
-   } from 'mobx';
+} from 'mobx';
    
-   export default class map {
-     map = null;
-     activeMarker = null;
-   
-     constructor() {
-       makeAutoObservable(this, {
-           map: observable,
-           setPlaces: action,
-           activeMarker: observable,
-           setActiveMarker: action,
-       })
-     }
-   
-     get map() {
-       return this.map;
-     }
-   
-     setMap = (googleMap) => {
-       this.map = googleMap;
-     }
+export default class map {
+  map = null;
+  activeMarker = null;
 
-     get activeMarker() {
-       return this.activeMarker;
-     }
+  constructor() {
+    makeAutoObservable(this, {
+        map: observable,
+        setPlaces: action,
+        activeMarker: observable,
+        setActiveMarker: action,
+    });
+  }
 
-     setActiveMarker = (marker) => {
-        this.activeMarker = marker;
-     }
-   };
-   
+  get map() {
+    return this.map;
+  }
+
+  setMap = (googleMap) => {
+    this.map = googleMap;
+  }
+
+  get activeMarker() {
+    return this.activeMarker;
+  }
+
+  setActiveMarker = (marker) => {
+    this.activeMarker = marker;
+  }
+};

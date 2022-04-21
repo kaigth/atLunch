@@ -1,6 +1,5 @@
 import {
   action,
-  computed,
   makeAutoObservable,
   observable,
 } from 'mobx';
@@ -16,7 +15,7 @@ export default class places {
         setActivePlace: action,
         setFavorite: action,
         setPlaces: action,
-    })
+    });
   }
 
   get places() {
@@ -27,7 +26,7 @@ export default class places {
     return arr.map(place => {
       const value = compareArr.find(val => place.reference === val);
       if (value === place.reference) {
-        return { ...place, favorite: true }
+        return { ...place, favorite: true };
       }
 
       return { ...place, favorite: false };

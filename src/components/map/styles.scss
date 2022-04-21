@@ -3,7 +3,7 @@
     width: calc(100vw);
 
     &--open {
-        width: calc(100vw - 348px);
         margin-left: 348px;
+        width: calc(100vw - 348px);
     }
 }
