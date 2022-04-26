@@ -6,7 +6,7 @@ import SearchIcon from '../svg/search';
 
 /**
  * render a standard input component
- * 
+ *
  * @function
  * @memberof components
  * @param {object} props The component props
@@ -16,27 +16,25 @@ import SearchIcon from '../svg/search';
  * @param {React.Component} props.search Boolean to display if a search icon should exist
  * @returns {React.Component} Returns the react component
  */
-export const Input = ({ inputRef, onClick, placeholder, search }) => {
-    return (
-        <>
-            <input className="input" ref={inputRef} placeholder={placeholder} />
-            {search && <SearchIcon onClick={onClick} styles={{ fill: 'green', width: '16px', height: '16px', position: 'absolute', top: '9px', right: '18px' }} />}
-        </>
-    );
-};
+export const Input = ({ inputRef, onClick, placeholder, search }) => (
+  <>
+    <input className="input" ref={inputRef} placeholder={placeholder} />
+    {search && <SearchIcon onClick={onClick} styles={{ fill: 'green', width: '16px', height: '16px', position: 'absolute', top: '9px', right: '18px' }} />}
+  </>
+);
 
 Input.propTypes = {
-    inputRef: PropTypes.func,
-    onClick: PropTypes.func,
-    placeholder: PropTypes.string,
-    search: PropTypes.bool,
+  inputRef: PropTypes.func,
+  onClick: PropTypes.func,
+  placeholder: PropTypes.string,
+  search: PropTypes.bool,
 };
 
 Input.defaultprops = {
-    inputRef: () => {},
-    onClick: () => {},
-    placeholder: 'Search',
-    search: false,
+  inputRef: () => {},
+  onClick: () => {},
+  placeholder: 'Search',
+  search: false,
 };
 
 export default Input;

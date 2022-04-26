@@ -5,7 +5,7 @@ import './styles.scss';
 
 /**
  * Render a standard Select input
- * 
+ *
  * @function
  * @memberof components
  * @param {object} props The component props
@@ -30,9 +30,9 @@ export const Select = ({ children, disabled, name, onChange, type, value }) => {
 
 Select.propTypes = {
   children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element,
-      PropTypes.string,
+    PropTypes.node,
+    PropTypes.element,
+    PropTypes.string,
   ]),
   disabled: PropTypes.bool,
   name: PropTypes.string,

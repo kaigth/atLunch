@@ -3,9 +3,9 @@ import { render } from '@testing-library/react';
 import Select from '.';
 
 describe('Select', () => {
-    test('matches snapshot', () => {
-        const { container } = render(<Select />)
+  test('matches snapshot', () => {
+    const { container } = render(<Select />)
 
-        expect(container).toMatchSnapshot();
-    });
+    expect(container).toMatchSnapshot();
+  });
 });

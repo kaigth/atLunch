@@ -1,19 +1,19 @@
 import {
-    action,
-    makeAutoObservable,
-    observable,
+  action,
+  makeAutoObservable,
+  observable,
 } from 'mobx';
-   
+
 export default class map {
   map = null;
   activeMarker = null;
 
   constructor() {
     makeAutoObservable(this, {
-        map: observable,
-        setPlaces: action,
-        activeMarker: observable,
-        setActiveMarker: action,
+      map: observable,
+      setPlaces: action,
+      activeMarker: observable,
+      setActiveMarker: action,
     });
 
     this.setMap = this.setMap.bind(this);

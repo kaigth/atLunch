@@ -1,54 +1,54 @@
 @import "../../styles/responsive.scss";
 
 .navigation {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    position: relative;
-    width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+
+  @include mobile {
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  &__logo {
+    img {
+      width: 218px;
+    }
+  }
+
+  &__content-filter {
+    display: inline-block;
 
     @include mobile {
-        padding: 10px;
-        display: block;
-        text-align: center;
+      width: 14%;
+    }
+  }
+
+  &__content-search {
+    position: relative;
+    display: inline-block;
+
+    @include mobile {
+      width: 86%;
     }
 
-    &__logo {
-        img {
-            width: 218px;
-        }
+    @include mobile {
+      padding-right: 12px;
     }
+  }
 
-    &__content-filter {
-        display: inline-block;
+  &__content {
+    padding: 4px;
+    position: relative;
+    display: inline-block;
 
-        @include mobile {
-            width: 14%;
-        }
+    @include mobile {
+      padding: 12px 0;
+      width: 100%;
     }
-
-    &__content-search {
-        position: relative;
-        display: inline-block;
-
-        @include mobile {
-            width: 86%;
-        }
-        
-        @include mobile {
-            padding-right: 12px;
-        }
-    }
-
-    &__content {
-        padding: 4px;
-        position: relative;
-        display: inline-block;
-
-        @include mobile {
-            padding: 12px 0;
-            width: 100%;
-        }
-    }
+  }
 }

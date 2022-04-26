@@ -2,58 +2,58 @@
 @import "../../styles/responsive.scss";
 
 .info-card {
-    background-color: $white;
-    color: $G800;
-    display: block;
-    padding: 6px;
+  background-color: $white;
+  color: $G800;
+  display: block;
+  padding: 6px;
+  position: relative;
+
+  &__image-container,
+  &__container {
+    display: inline-block;
+    font-size: 14px;
     position: relative;
+    text-align: left;
+  }
 
-    &__image-container,
-    &__container {
-        display: inline-block;
-        font-size: 14px;
-        position: relative;
-        text-align: left;
+  &__image-container {
+    width: 70px;
+    vertical-align: top;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    width: 60px;
+  }
+
+  &__container {
+    width: 166px;
+  }
+
+  &__review {
+    display: inline;
+    margin-left: 4px;
+
+    &--open {
+      color: $brand;
     }
 
-    &__image-container {
-        width: 70px;
-        vertical-align: top;
-
-        img {
-            margin: 0;
-        }
+    &--closed {
+      color: $red;
     }
+  }
 
-    &__image {
-        width: 60px;
-    }
+  &__content {
+    padding: 2px 0;
+  }
 
-    &__container {
-        width: 166px;
-    }
-
-    &__review {
-        display: inline;
-        margin-left: 4px;
-
-        &--open {
-            color: $brand;
-        }
-
-        &--closed {
-            color: $red;
-        }
-    }
-
-    &__content {
-        padding: 2px 0;
-    }
-
-    &__title {
-        color: $G800;
-        font-size: 16px;
-        padding: 4px 0;
-        font-weight: bold;
-    }
+  &__title {
+    color: $G800;
+    font-size: 16px;
+    padding: 4px 0;
+    font-weight: bold;
+  }
 }

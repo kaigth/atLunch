@@ -1,22 +1,22 @@
 @import '../../styles/responsive.scss';
 
 .map {
-    height: calc(100vh - 81.33px);
-    width: calc(100vw);
+  height: calc(100vh - 81.33px);
+  width: calc(100vw);
 
-    &--open {
-        margin-left: 320px;
-        width: calc(100vw - 320px);
-
-        @include mobile {
-            margin-left: 0;
-            width: 100vw;
-        }
-    }
+  &--open {
+    margin-left: 320px;
+    width: calc(100vw - 320px);
 
     @include mobile {
-        margin-left: 0;
-        width: 100vw;
-        height: calc(100vh - 119px);
+      margin-left: 0;
+      width: 100vw;
     }
+  }
+
+  @include mobile {
+    margin-left: 0;
+    width: 100vw;
+    height: calc(100vh - 119px);
+  }
 }

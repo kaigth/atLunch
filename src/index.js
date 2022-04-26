@@ -10,21 +10,21 @@ import constants from './constants/global';
 import './styles/index.scss';
 
 const render = (status) => {
-    if (status === Status.LOADING) return "Loading...";
-    if (status === Status.FAILURE) return "Error";
-    return null;
+  if (status === Status.LOADING) return "Loading...";
+  if (status === Status.FAILURE) return "Error";
+  return null;
 };
 
 /**
- * 
+ *
  * @returns {React.Component} The main application component
  */
 const MainApp = () => (
-    <Wrapper apiKey={constants.GOOGLE_API_KEY} libraries={["places"]} render={render}>
-        <StoreProvider value={stores}>
-            <Home />
-        </StoreProvider>
-    </Wrapper>
+  <Wrapper apiKey={constants.GOOGLE_API_KEY} libraries={["places"]} render={render}>
+    <StoreProvider value={stores}>
+      <Home />
+    </StoreProvider>
+  </Wrapper>
 );
 
 const container = document.getElementById('root');

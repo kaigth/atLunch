@@ -2,86 +2,86 @@
 @import "../../styles/responsive.scss";
 
 .card {
-    background-color: $white;
-    border: 2px solid $G200;
-    border-radius: 8px;
-    color: $G800;
-    cursor: pointer;
-    display: block;
-    margin-bottom: 8px;
-    padding: 12px;
-    position: relative;
-    width:280px;
+  background-color: $white;
+  border: 2px solid $G200;
+  border-radius: 8px;
+  color: $G800;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  padding: 12px;
+  position: relative;
+  width:280px;
 
-    @include mobile {
-        width: 100%;
+  @include mobile {
+    width: 100%;
+  }
+
+  &:hover, &--selected {
+    border: 2px solid $brand;
+  }
+
+  &--borderless {
+    border: none;
+    cursor: auto;
+    margin: 0;
+    padding: 4px;
+
+    .card__heart {
+        display: none;
     }
 
-    &:hover, &--selected {
-        border: 2px solid $brand;
-    }
-
-    &--borderless {
+    &:hover {
         border: none;
-        cursor: auto;
-        margin: 0;
-        padding: 4px;
+    }
+  }
 
-        .card__heart {
-            display: none;
-        }
+  &__image-container,
+  &__container {
+    display: inline-block;
+    font-size: 14px;
+    position: relative;
+    text-align: left;
+  }
 
-        &:hover {
-            border: none;
-        }
+  &__image-container {
+    width: 70px;
+    vertical-align: top;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    width: 60px;
+  }
+
+  &__container {
+    width: 166px;
+  }
+
+  &__review {
+    display: inline;
+    margin-left: 4px;
+
+    &--open {
+      color: $brand;
     }
 
-    &__image-container,
-    &__container {
-        display: inline-block;
-        font-size: 14px;
-        position: relative;
-        text-align: left;
+    &--closed {
+      color: $red;
     }
+  }
 
-    &__image-container {
-        width: 70px;
-        vertical-align: top;
+  &__content {
+    padding: 2px 0;
+  }
 
-        img {
-            margin: 0;
-        }
-    }
-
-    &__image {
-        width: 60px;
-    }
-
-    &__container {
-        width: 166px;
-    }
-
-    &__review {
-        display: inline;
-        margin-left: 4px;
-
-        &--open {
-            color: $brand;
-        }
-
-        &--closed {
-            color: $red;
-        }
-    }
-
-    &__content {
-        padding: 2px 0;
-    }
-
-    &__title {
-        color: $G800;
-        font-size: 16px;
-        padding: 4px 0;
-        font-weight: bold;
-    }
+  &__title {
+    color: $G800;
+    font-size: 16px;
+    padding: 4px 0;
+    font-weight: bold;
+  }
 }

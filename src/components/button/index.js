@@ -5,7 +5,7 @@ import './styles.scss';
 
 /**
  * Render a standard button
- * 
+ *
  * @function
  * @memberof components
  * @param {object} props The component props
@@ -16,33 +16,31 @@ import './styles.scss';
  * @param {Function} props.onClick the onClick event
  * @returns {React.Component} Returns the react component
  */
-export const Button = ({ borderless, children, disabled, icon, onClick }) => {
-    return (
-        <button className={`button ${borderless ? 'button--borderless' : ''}`} disabled={disabled} onClick={onClick}>
-            {icon && icon}
-            {children}
-        </button>
-    );
-};
+export const Button = ({ borderless, children, disabled, icon, onClick }) => (
+  <button className={`button ${borderless ? 'button--borderless' : ''}`} disabled={disabled} onClick={onClick}>
+    {icon && icon}
+    {children}
+  </button>
+);
 
 Button.propTypes = {
-    borderless: PropTypes.bool,
-    children: PropTypes.oneOfType([
-        PropTypes.node,
-        PropTypes.element,
-        PropTypes.string,
-    ]),
-    disabled: PropTypes.bool,
-    icon: PropTypes.element,
-    onClick: PropTypes.func,
+  borderless: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.element,
+    PropTypes.string,
+  ]),
+  disabled: PropTypes.bool,
+  icon: PropTypes.element,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-    borderless: false,
-    children: null,
-    disabled: false,
-    icon: null,
-    onClick: () => {},
+  borderless: false,
+  children: null,
+  disabled: false,
+  icon: null,
+  onClick: () => {},
 };
 
 export default Button;

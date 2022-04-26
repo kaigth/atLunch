@@ -11,14 +11,14 @@ export default class places {
 
   constructor() {
     makeAutoObservable(this, {
-        activePlace: observable,
-        items: observable,
-        hovered: observable,
-        setActivePlace: action,
-        setFavorite: action,
-        setHovered: action,
-        setPlaces: action,
-        sortBy: action,
+      activePlace: observable,
+      items: observable,
+      hovered: observable,
+      setActivePlace: action,
+      setFavorite: action,
+      setHovered: action,
+      setPlaces: action,
+      sortBy: action,
     });
 
     this.setPlaces = this.setPlaces.bind(this);
