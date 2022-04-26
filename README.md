@@ -11,3 +11,12 @@ yarn serve
 ```
 
 You are on your way to lunch.
+
+To build out the project for prod you can run:
+```
+yarn
+yarn build
+python -m http.server 9000
+```
+
+Now visit localhost:9000 and you are ready to eat.

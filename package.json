@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "serve": "webpack serve --config ./configs/webpack.config.dev.js"
+    "serve": "webpack serve --config ./configs/webpack.config.dev.js",
+    "build": "webpack build --config ./configs/webpack.config.prod.js"
   },
   "author": "James Smith",
   "license": "ISC",

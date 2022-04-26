@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -20,6 +21,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'All Trails To Lunch',
             template: path.resolve(__dirname, '../public/index.html'),
+        }),
+        new CopyWebpackPlugin({
+          patterns: [
+            {
+              from: path.resolve(__dirname, '../public'),
+              globOptions: {
+                dot: true,
+                ignore: ['**/index.html'],
+              },
+            },
+          ],
         }),
     ],
     output: {

@@ -45,7 +45,7 @@ export default class places {
 
   setPlaces(places) {
     const filteredPlaces = places.filter(item => item.business_status === 'OPERATIONAL');
-    const favorites = JSON.parse(window.localStorage.getItem('favorites'));
+    const favorites = JSON.parse(window.localStorage.getItem('favorites')) || [];
     const newItems = this.parseFavorites(filteredPlaces, favorites);
     this.items = newItems;
   }
