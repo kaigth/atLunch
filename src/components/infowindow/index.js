@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOMServer from 'react-dom/server';
 
 /**
@@ -6,11 +7,14 @@ import ReactDOMServer from 'react-dom/server';
  * 
  * @function
  * @memberof components
- * @param {object} options The InfoWindow options
+ * @param {object} props The component props
+ * @param {object|string} props.children The children of the DropDown
+ * @param {object} props.map The map reference
+ * @param {object} props.activeMarker The selected marker
+ * @returns {React.Component} Returns the react component
  */
-export const InfoWindow = (options) => {
+export const InfoWindow = ({ children, map, activeMarker }) => {
     const [ infoWindow, setInfoWindow ] = useState();
-    const { children, map, activeMarker } = options;
 
     const updateContent = () => {
         const content = renderChildren();
@@ -30,7 +34,7 @@ export const InfoWindow = (options) => {
         if (!infoWindow) {
             setInfoWindow(new google.maps.InfoWindow({
                 content: '',
-                ...options,
+                map,
             }));
         }
 
@@ -45,12 +49,27 @@ export const InfoWindow = (options) => {
         if (infoWindow && children) updateContent();
 
         if (infoWindow) {
-            infoWindow.setOptions(options);
             handleOpen();
         }
-    }, [infoWindow, options]);
+    }, [infoWindow, children]);
 
   return null;
+};
+
+InfoWindow.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.element,
+        PropTypes.string,
+    ]),
+    map: PropTypes.shape({}),
+    activeMarker: PropTypes.shape({}),
+};
+
+InfoWindow.defaultProps = {
+    children: null,
+    map: null,
+    activeMarker: null,
 };
 
 export default InfoWindow;

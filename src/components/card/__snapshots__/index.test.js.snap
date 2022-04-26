@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot 1`] = `
+<div>
+  <li
+    class="card "
+  >
+    <svg
+      height="20px"
+      style="position: absolute; top: 8px; right: 8px; z-index: 20; fill: #ffffff;"
+      version="1.1"
+      viewBox="0 0 22 20"
+      width="22px"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        fill-rule="evenodd"
+        id="Symbols"
+        stroke="none"
+        stroke-width="1"
+      >
+        <g
+          id="card/01"
+          stroke="#CCCCCC"
+          stroke-width="2"
+          transform="translate(-267.000000, -16.000000)"
+        >
+          <path
+            d="M282.905267,17 C284.310271,17 285.581489,17.5803838 286.501954,18.516418 C287.428392,19.4585249 288,20.7604431 288,22.1978182 C288,23.4186872 287.587805,24.5414477 286.896608,25.4289628 L286.896608,25.4289628 L278.726954,33.819867 C278.514846,34.0228784 278.25017,34.1281325 277.986198,34.1281325 C277.728935,34.1281325 277.475282,34.0275798 277.28351,33.8306148 L277.28351,33.8306148 L269.103241,25.4288076 C268.411463,24.5413545 268,23.4186079 268,22.1978182 C268,20.7604431 268.571608,19.4585249 269.498046,18.516418 C270.418511,17.5803838 271.689729,17 273.094733,17 C274.775485,17 276.264322,17.8309011 277.190826,19.1068418 C277.56162,19.6174829 277.836756,20.1917044 278.000084,20.7987171 C278.163411,20.1913541 278.438493,19.6173271 278.809174,19.1068418 C279.735678,17.8309011 281.224515,17 282.905267,17 Z"
+            id="Favoriate"
+          />
+        </g>
+      </g>
+    </svg>
+    <div
+      class="card__image-container"
+    >
+      <img
+        alt="Missing Title"
+        class="card__image"
+        src="./trail.jpg"
+      />
+    </div>
+    <div
+      class="card__container"
+    >
+      <h2
+        class="card__title"
+      >
+        Missing Title
+      </h2>
+      <span
+        style="display: inline-block; direction: ltr;"
+      >
+        <span
+          aria-hidden="true"
+          class="card__review"
+          style="position: relative; display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: middle; user-select: none;"
+        >
+          <span
+            class="empty-icons"
+            style="display: inline-block; color: rgb(204, 204, 204);"
+          >
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+          </span>
+          <span
+            class="filled-icons"
+            style="position: absolute; top: 0px; left: 0px; color: rgb(255, 188, 11); overflow: hidden; white-space: nowrap; display: inline-block; width: 0%;"
+            title="1 out of 5"
+          >
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <span>
+        (0)
+      </span>
+      <span
+        class="card__review"
+      >
+        $
+      </span>
+      <span
+        class="card__review card__review--closed"
+      >
+        Closed
+      </span>
+      <p
+        class="card__content"
+      />
+      <p
+        class="card__content"
+      />
+    </div>
+  </li>
+</div>
+`;

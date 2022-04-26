@@ -1,4 +1,6 @@
-@import "_reset.scss";
+@import "./_variables.scss";
+@import "./_responsive.scss";
+@import "./_reset.scss";
 
 body, html {
     height: 100%;
@@ -6,10 +8,14 @@ body, html {
 }
 
 body {
-    background-color: #FFFFFF;
-    color: #3d3f41;
+    background-color: $white;
+    color: $G800;
     font-size: 16px;
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-setif';
     font-weight: 400;
     position: relative;
+}
+
+.pac-logo:after {
+    opacity: 0;
 }

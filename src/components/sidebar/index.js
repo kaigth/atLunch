@@ -15,7 +15,14 @@ import './styles.scss';
  * @returns {React.Component} Returns the react component
  */
 export const SideBar = () => {
-    const { places, setActivePlace, setFavorite } = useStore('places');
+    const {
+        places,
+        setActivePlace,
+        activePlace,
+        setFavorite,
+        hovered,
+        setHovered,
+    } = useStore('places');
     const { open } = useStore('sidebar');
 
     return (
@@ -27,6 +34,8 @@ export const SideBar = () => {
                             key={place.reference}
                             reference={place.reference}
                             onClick={ref => setActivePlace(ref)}
+                            mouseEnter={ref => setHovered(ref)}
+                            selected={activePlace && activePlace.reference === place.reference || hovered === place.reference}
                             title={place.name}
                             reviewTotal={place.user_ratings_total}
                             review={place.rating}

@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoCard matches snapshot 1`] = `
+<div>
+  <li
+    class="info-card"
+  >
+    <div
+      class="info-card__image-container"
+    >
+      <img
+        alt="Missing Title"
+        class="info-card__image"
+        src="./trail.jpg"
+      />
+    </div>
+    <div
+      class="info-card__container"
+    >
+      <h2
+        class="info-card__title"
+      >
+        Missing Title
+      </h2>
+      <span
+        style="display: inline-block; direction: ltr;"
+      >
+        <span
+          aria-hidden="true"
+          class="info-card__review"
+          style="position: relative; display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: middle; user-select: none;"
+        >
+          <span
+            class="empty-icons"
+            style="display: inline-block; color: rgb(204, 204, 204);"
+          >
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+          </span>
+          <span
+            class="filled-icons"
+            style="position: absolute; top: 0px; left: 0px; color: rgb(255, 188, 11); overflow: hidden; white-space: nowrap; display: inline-block; width: 0%;"
+            title="1 out of 5"
+          >
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+            <svg
+              class="star-svg"
+              fill="currentColor"
+              height="15"
+              viewBox="0 0 24 24"
+              width="15"
+            >
+              <path
+                d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                fill="currentColor"
+                stroke="none"
+                stroke-miterlimit="10"
+                stroke-width="0"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <span>
+        (0)
+      </span>
+      <span
+        class="info-card__review"
+      >
+        $
+      </span>
+      <span
+        class="info-card__review info-card__review--closed"
+      >
+        Closed
+      </span>
+      <p
+        class="info-card__content"
+      />
+      <p
+        class="info-card__content"
+      />
+    </div>
+  </li>
+</div>
+`;

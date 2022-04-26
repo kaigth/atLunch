@@ -7,9 +7,12 @@ import Map from '../../components/map';
 import SideBar from '../../components/sidebar';
 import Marker from '../../components/marker';
 import InfoWindow from '../../components/infowindow';
-import Card from '../../components/card';
+import Button from '../../components/button';
+import List from '../../components/svg/list';
+import Pin from '../../components/svg/pin';
 
 import './styles.scss';
+import InfoCard from '../../components/infoCard';
 
 /**
  * Render the home route
@@ -20,28 +23,22 @@ import './styles.scss';
  * @returns {string} The rendered component
  */
 export const Home = () => {
-    const { places, activePlace } = useStore('places');
-    const { map, activeMarker  } = useStore('map');
+    const { places, activePlace, setActivePlace, hovered, setHovered } = useStore('places');
+    const { map, activeMarker, setActiveMarker } = useStore('map');
+    const { toggleOpen, open } = useStore('sidebar');
 
     return (
         <section className="home">
             <Nav />
+            <div className="home__mobile-button">
+                <Button onClick={toggleOpen} icon={open ? <Pin /> : <List />}>{open ? 'Map' : 'List'}</Button>
+            </div>
             <main className="home__container">
                 <SideBar />
-                <Map>
-                    { places && places.map(place => (
-                        <Marker
-                            key={place.reference}
-                            reference={place.reference}
-                            position={place.geometry.location}
-                        />
-                    ))}
-                </Map>
-                { activePlace &&
+                { activePlace && activeMarker &&
                     <InfoWindow map={map} activeMarker={activeMarker}>
-                        <Card
+                        <InfoCard
                             key={activePlace?.reference}
-                            borderless={true}
                             title={activePlace?.name}
                             reviewTotal={activePlace?.user_ratings_total}
                             review={activePlace?.rating}
@@ -52,6 +49,22 @@ export const Home = () => {
                         />
                     </InfoWindow>
                 }
+                <Map>
+                    { places && places.map(place => (
+                        <Marker
+                            key={place.reference}
+                            reference={place.reference}
+                            activePlace={activePlace}
+                            hovered={hovered}
+                            onClick={(marker, ref) => {
+                                setActivePlace(ref);
+                                setActiveMarker(marker);
+                            }}
+                            onHover={ref => setHovered(ref)}
+                            position={place.geometry.location}
+                        />
+                    ))}
+                </Map>
             </main>
         </section>
     )

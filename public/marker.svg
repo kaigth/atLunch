@@ -1,0 +1,13 @@
+<svg width="42px" height="66px" viewBox="0 0 27 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-40.0%" y="-133.3%" width="180.0%" height="366.7%" filterUnits="objectBoundingBox" id="filter-e0m675ebkm-1">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Non-selected-Pin" transform="translate(3.000000, 0.000000)">
+            <ellipse id="Oval" fill-opacity="0.2" fill="#000000" filter="url(#filter-e0m675ebkm-1)" cx="10.5" cy="29.75" rx="7.5" ry="2.25"></ellipse>
+            <path d="M10.5621302,0.5 C4.72189349,0.5 0,5.03138075 0,10.6359833 C0,16.4790795 6.71005917,24.8263598 10.5621302,29 C14.4142012,24.8263598 21,16.4790795 21,10.6359833 C21,5.03138075 16.2781065,0.5 10.5621302,0.5" id="Fill-1" stroke="#FFFFFF" fill="#808080"></path>
+        </g>
+    </g>
+</svg>

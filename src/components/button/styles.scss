@@ -1,21 +1,43 @@
+@import "../../styles/_variables.scss";
+
 .button {
-    background-color: #FFFFFF;
-    border: 1px solid #959da4;
+    background-color: $white;
+    border: 1px solid $G500;
     border-radius: 4px;
+    color: $G800;
     cursor: pointer;
     margin: 0 8px;
     padding: 8px;
     position: relative;
+    display: flex;
+    align-items: center;
 
     &:hover {
-        background-color: green;
-        border: 1px solid green;
-        color: #FFFFFF;
+        background-color: $brand;
+        border: 1px solid $brand;
+        color: $white;
+    }
+    
+    &--borderless {
+        background-color: $white;
+        border: none;
+        color: $brand;
+        cursor: pointer;
+        font-weight: bold;
+        display: inline-block;
+        padding: 4px;
+
+        &:hover {
+            background-color: $white;
+            border: none;
+            color: $brandLight;
+            padding: 4px;
+        }
     }
 
     &:disabled {
-        background-color: lightgray;
-        border: 1px solid #959da4;
-        color: gray;
+        background-color: $G300;
+        border: 1px solid $G500;
+        color: $G700;
     }
 }

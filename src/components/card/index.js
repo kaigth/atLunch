@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StarsRating from 'stars-rating';
+import { Rating } from 'react-simple-star-rating';
+
+import Heart from '../svg/heart';
 
 import './styles.scss';
 
@@ -26,39 +28,42 @@ const renderCost = (cost) => {
  * @memberof components
  * @param {object} props The component props
  * @param {string} props.address The business address
- * @param {string} props.borderless Card displayed as a borderless infoWindow
  * @param {string} props.companyType The type of company selected
  * @param {number} props.cost The cost rating
  * @param {string} props.icon The business icon
  * @param {Boolean} props.favorite Displays if the card is favorited
  * @param {Function} props.onClick Function to handle clicking the card.
+ * @param {Function} props.mouseEnter Handles a mouse enter action.
  * @param {string} props.open Boolean to handle if the business is open
  * @param {string} props.reference The reference ID for the business. Used for sorting and reduction
  * @param {number} props.review The user review of the card
  * @param {number} props.reviewTotal The amount of reviews in total of the card
  * @param {Function} props.setFavorite Triggers the addition and removal of a favorite card
+ * @param {Function} props.selected highlights a selected card
  * @param {string} props.title The title of the card
  * @returns {React.Component} Returns the react component
  */
 export const Card = ({
     address,
-    borderless,
     companyType,
     cost,
     icon,
     favorite,
     onClick,
     open,
+    mouseEnter,
     reference,
     review,
     reviewTotal,
+    selected,
     setFavorite,
     title,
 }) => {
+    
     return (
-        <li className={`card ${borderless ? 'card--borderless' : ''}`} onClick={() => onClick(reference)}>
-            <div 
-                className={`card__heart ${favorite ? 'card__heart--favorite' : ''}`}
+        <li className={`card ${selected ? 'card--selected' : ''}`} onClick={() => onClick(reference)} onMouseEnter={() => mouseEnter(reference)}>
+            <Heart 
+                styles={{ position: 'absolute', top: '8px', right: '8px', zIndex: 20, fill: favorite ? '#428a13' : '#ffffff' }}
                 onClick={evt => {
                     evt.stopPropagation();
                     setFavorite(reference);
@@ -69,7 +74,7 @@ export const Card = ({
             </div>
             <div className="card__container">
                 <h2 className="card__title">{title}</h2>
-                <StarsRating className="card__review" edit={false} count={5} value={review} size={15} color2={'#ffd700'} />
+                <Rating className="card__review" readonly initialValue={review} size={15} />
                 <span>{`(${reviewTotal})`}</span>
                 <span className="card__review">{renderCost(cost)}</span>
                 {open
@@ -84,31 +89,35 @@ export const Card = ({
 
 Card.propTypes = {
     address: PropTypes.string,
-    borderless: PropTypes.bool,
     companyType: PropTypes.string,
     cost: PropTypes.number,
     favorite: PropTypes.bool,
     icon: PropTypes.string,
+    mouseEnter: PropTypes.func,
+    onClick: PropTypes.func,
     open: PropTypes.bool,
     reference: PropTypes.string,
     review: PropTypes.number,
     reviewTotal: PropTypes.number,
     setFavorite: PropTypes.func,
+    selected: PropTypes.bool,
     title: PropTypes.string,
 };
 
 Card.defaultProps = {
     address: '',
-    borderless: false,
     companyType: '',
     cost: 0,
     favorite: false,
     icon: './trail.jpg',
+    mouseEnter: () => {},
+    onClick: () => {},
     open: false,
     reference: '',
     review: 0,
     reviewTotal: 0,
     setFavorite: () => {},
+    selected: false,
     title: 'Missing Title',
 };
 

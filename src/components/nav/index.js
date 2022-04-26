@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../store';
 
@@ -18,8 +18,8 @@ import './styles.scss';
  * @returns {React.Component} Returns the react component
  */
 export const Nav = () => {
-    const [ isOpen, setIsOpen ] = useState(false);
-    const [ sortedBy, setSortedBy ] = useState({});
+    const [isOpen, setIsOpen] = useState(false);
+    const [sortedBy, setSortedBy] = useState({});
     const { sortBy, places } = useStore('places');
     const toggle = () => setIsOpen(!isOpen);
 
@@ -27,10 +27,11 @@ export const Nav = () => {
         <nav className="navigation">
             <div className="navigation__logo">
                 <img src="logo.png" alt="AllTrails" />
-                <h1 className='navigation__text'>AT LUNCH</h1>
             </div>
             <div className="navigation__content">
-                <Button disabled={places.length <= 0} onClick={() => toggle()}>filter</Button>
+                <div className="navigation__content-filter">
+                    <Button onClick={() => toggle()}>filter</Button>
+                </div>
                 <DropDown isOpen={isOpen} onClick={() => {
                     sortBy(sortedBy.direction, sortedBy.by);
                     toggle();
@@ -56,7 +57,9 @@ export const Nav = () => {
                         </Select>
                     </form>
                 </DropDown>
-                <Search />
+                <div className="navigation__content-search">
+                    <Search />
+                </div>
             </div>
         </nav>
     );

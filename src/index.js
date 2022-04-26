@@ -7,7 +7,7 @@ import Home from './containers/home';
 
 import constants from './constants/global';
 
-import 'src/styles/index.scss';
+import './styles/index.scss';
 
 const render = (status) => {
     if (status === Status.LOADING) return "Loading...";

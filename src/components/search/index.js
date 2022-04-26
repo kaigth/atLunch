@@ -68,7 +68,7 @@ export const Search = () => {
         }
     }, [search, map]);
 
-    return <Input inputRef={ref => setRef(ref)} placeholder="Search" />;
+    return <Input inputRef={ref => setRef(ref)} search placeholder="Search" />;
 };
 
 export default observer(Search);

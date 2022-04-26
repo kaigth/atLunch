@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Button from '../button';
+
 import './styles.scss';
 
 /**
@@ -16,14 +18,17 @@ import './styles.scss';
  */
 export const DropDown = ({ children, isOpen, onClick }) => {
     return (
-        <div className={`dropdown ${isOpen ? 'dropdown--open' : ''}`}>
-            <div className="dropdown__content">
-                {children}
+        <>
+            <div onClick={onClick} className={`dropdown__splash ${isOpen ? 'dropdown__splash--open' : ''}`} />
+            <div className={`dropdown ${isOpen ? 'dropdown--open' : ''}`}>
+                <div className="dropdown__content">
+                    {children}
+                </div>
+                <div className="dropdown__footer">
+                    <Button borderless onClick={onClick}>Apply</Button>
+                </div>
             </div>
-            <div className="dropdown__footer">
-                <button className="dropdown__button" onClick={onClick}>Save</button>
-            </div>
-        </div>
+        </>
     );
 };
 

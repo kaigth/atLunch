@@ -1,40 +1,12 @@
 @import "../../styles/_variables.scss";
 @import "../../styles/responsive.scss";
 
-.card {
+.info-card {
     background-color: $white;
-    border: 2px solid $G200;
-    border-radius: 8px;
     color: $G800;
-    cursor: pointer;
     display: block;
-    margin-bottom: 8px;
-    padding: 12px;
+    padding: 6px;
     position: relative;
-    width:280px;
-
-    @include mobile {
-        width: 100%;
-    }
-
-    &:hover, &--selected {
-        border: 2px solid $brand;
-    }
-
-    &--borderless {
-        border: none;
-        cursor: auto;
-        margin: 0;
-        padding: 4px;
-
-        .card__heart {
-            display: none;
-        }
-
-        &:hover {
-            border: none;
-        }
-    }
 
     &__image-container,
     &__container {

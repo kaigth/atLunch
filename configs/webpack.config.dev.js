@@ -52,11 +52,15 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                        sourceMap: true,
+                            sourceMap: true,
                         },
                     },
                 ],
             },
+            {
+                test: /\.(png|jp(e*)g|svg|gif)$/,
+                type: 'asset/inline',
+            }
         ],
     },
 };

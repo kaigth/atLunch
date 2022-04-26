@@ -75,7 +75,6 @@ Map.propTypes = {
         PropTypes.element,
         PropTypes.string,
     ]),
-    onClick: PropTypes.func,
 };
 
 Map.defaultProps = {

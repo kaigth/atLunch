@@ -7,13 +7,16 @@ import {
 export default class places {
   items = [];
   activePlace = null;
+  hovered = '';
 
   constructor() {
     makeAutoObservable(this, {
         activePlace: observable,
         items: observable,
+        hovered: observable,
         setActivePlace: action,
         setFavorite: action,
+        setHovered: action,
         setPlaces: action,
         sortBy: action,
     });
@@ -22,6 +25,7 @@ export default class places {
     this.setActivePlace = this.setActivePlace.bind(this);
     this.setFavorite = this.setFavorite.bind(this);
     this.sortBy = this.sortBy.bind(this);
+    this.setHovered = this.setHovered.bind(this);
   }
 
   get places() {
@@ -77,5 +81,13 @@ export default class places {
     this.items = parsed;
 
     window.localStorage.setItem('favorites', JSON.stringify(tempArr));
+  }
+
+  get hovered() {
+    return this.hovered;
+  }
+
+  setHovered(reference) {
+    this.hovered = reference;
   }
 };

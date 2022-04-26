@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropDown matches snapshot 1`] = `
+<div>
+  <div
+    class="dropdown__splash "
+  />
+  <div
+    class="dropdown "
+  >
+    <div
+      class="dropdown__content"
+    />
+    <div
+      class="dropdown__footer"
+    >
+      <button
+        class="button button--borderless"
+      >
+        Apply
+      </button>
+    </div>
+  </div>
+</div>
+`;
