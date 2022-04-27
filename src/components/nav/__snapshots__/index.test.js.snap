@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav matches snapshot 1`] = `
+<div>
+  <nav
+    class="navigation"
+  >
+    <div
+      class="navigation__logo"
+    >
+      <img
+        alt="AllTrails"
+        src="logo.png"
+      />
+    </div>
+    <div
+      class="navigation__content"
+    >
+      <div
+        class="navigation__content-filter"
+      >
+        <button
+          class="button "
+        >
+          filter
+        </button>
+      </div>
+      <div
+        class="dropdown__splash "
+      />
+      <div
+        class="dropdown "
+      >
+        <div
+          class="dropdown__content"
+        >
+          <form>
+            <div
+              class="select"
+            >
+              <label>
+                <input
+                  disabled=""
+                  name="rating"
+                  type="radio"
+                  value="ratingHigh"
+                />
+                Ratings High to Low
+              </label>
+            </div>
+            <div
+              class="select"
+            >
+              <label>
+                <input
+                  disabled=""
+                  name="rating"
+                  type="radio"
+                  value="ratingLow"
+                />
+                Ratings Low to High
+              </label>
+            </div>
+          </form>
+        </div>
+        <div
+          class="dropdown__footer"
+        >
+          <button
+            class="button button--borderless"
+          >
+            Apply
+          </button>
+        </div>
+      </div>
+      <div
+        class="navigation__content-search"
+      >
+        <input
+          class="input"
+          placeholder="Search"
+        />
+        <svg
+          id="Capa_1"
+          style="fill: green; width: 16px; height: 16px; position: absolute; top: 9px; right: 18px;"
+          version="1.1"
+          viewBox="0 0 487.95 487.95"
+          x="0px"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          y="0px"
+        >
+          <g>
+            <g>
+              <path
+                d="M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1    c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4    c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
